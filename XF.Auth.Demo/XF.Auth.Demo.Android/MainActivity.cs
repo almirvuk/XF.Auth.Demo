@@ -7,6 +7,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+using XF.Auth.Demo.Authentication;
+
 namespace XF.Auth.Demo.Droid {
     [Activity(Label = "XF.Auth.Demo", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity {
@@ -28,6 +30,7 @@ namespace XF.Auth.Demo.Droid {
             global::Xamarin.Auth.CustomTabsConfiguration.IsActionButtonUsed = false;
             global::Xamarin.Auth.CustomTabsConfiguration.IsActionBarToolbarIconUsed = false;
             global::Xamarin.Auth.CustomTabsConfiguration.IsDefaultShareMenuItemUsed = false;
+
 
             global::Android.Graphics.Color color_xamarin_blue;
             color_xamarin_blue = new global::Android.Graphics.Color(0x34, 0x98, 0xdb);
