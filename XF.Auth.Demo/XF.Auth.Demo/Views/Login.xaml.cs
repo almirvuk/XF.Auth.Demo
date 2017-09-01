@@ -42,7 +42,7 @@ namespace XF.Auth.Demo.Views {
                                 (
                                     () => {
                                         string uri = null;
-                                         uri = "https://www.facebook.com/v2.9/dialog/oauth";
+                                        uri = "https://www.facebook.com/v2.9/dialog/oauth";
                                         return new Uri(uri);
                                     }
                                 ).Invoke(),
@@ -105,40 +105,15 @@ namespace XF.Auth.Demo.Views {
         }
 
         private void PresentUILoginScreen(OAuth2Authenticator authenticator) {
-            if (false) {
-                // Renderers Implementaion
 
-                Xamarin.Auth.XamarinForms.AuthenticatorPage ap;
-                ap = new Xamarin.Auth.XamarinForms.AuthenticatorPage() {
-                    Authenticator = authenticator,
-                };
+            // Presenters Implementation
 
-                NavigationPage np = new NavigationPage(ap);
-
-                if (false == true) {
-                    System.Diagnostics.Debug.WriteLine("Presenting");
-                    System.Diagnostics.Debug.WriteLine("        PushModal");
-                    System.Diagnostics.Debug.WriteLine("        Custom Renderers");
-
-                    Navigation.PushModalAsync(np);
-                } else {
-                    System.Diagnostics.Debug.WriteLine("Presenting");
-                    System.Diagnostics.Debug.WriteLine("        Push");
-                    System.Diagnostics.Debug.WriteLine("        Custom Renderers");
-
-                    Navigation.PushAsync(np);
-                }
-            } else {
-                // Presenters Implementation
-
-                    Xamarin.Auth.Presenters.OAuthLoginPresenter presenter = null;
-                    presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
-                    presenter.Login(authenticator);
-            }
+            Xamarin.Auth.Presenters.OAuthLoginPresenter presenter = null;
+            presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
+            presenter.Login(authenticator);
 
             return;
         }
-
 
     }
 }
