@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Xamarin.Auth;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using XF.Auth.Demo.Authentication;
+using XF.Auth.Demo.Authentication; 
 
 namespace XF.Auth.Demo.Views {
 
@@ -15,6 +15,11 @@ namespace XF.Auth.Demo.Views {
 
         public Login() {
             InitializeComponent();
+
+
+            
+            FacebookButton.Clicked += FacebookLogin;
+
         }
 
         OAuth2Authenticator authenticator;

@@ -46,7 +46,7 @@ namespace XF.Auth.Demo.Droid.Authentication {
                         "https://[::1]:PORT", 
                         */
                     },
-            //DataHost = "localhost",
+            DataHost = "localhost",
             DataPath = "/oauth2redirect"
         )
     ]

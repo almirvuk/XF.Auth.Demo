@@ -146,6 +146,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Authentication\App.DeepAppLinking.cs">
+      <Generator>MSBuild:Compile</Generator>
+    </Compile>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -153,12 +156,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\XF.Auth.Demo\XF.Auth.Demo.csproj">
-      <Project>{37d6db91-f6bd-4ba7-b122-e32fde97ae92}</Project>
+      <Project>{d3752114-6ea4-4bba-b6cd-429baa4a3268}</Project>
       <Name>XF.Auth.Demo</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Authentication\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

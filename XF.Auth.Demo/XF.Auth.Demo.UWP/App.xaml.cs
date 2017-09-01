@@ -54,6 +54,7 @@ namespace XF.Auth.Demo.UWP {
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 Xamarin.Forms.Forms.Init(e);
+                global::Xamarin.Auth.Presenters.UWP.AuthenticationConfiguration.Init();
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated) {
                     //TODO: Load state from previously suspended application

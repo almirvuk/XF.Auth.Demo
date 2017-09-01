@@ -6,7 +6,7 @@
         <StackLayout>
 
             <Button  Text="Facebook"
-                     Clicked="FacebookLogin"/>
+                     x:Name="FacebookButton"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
