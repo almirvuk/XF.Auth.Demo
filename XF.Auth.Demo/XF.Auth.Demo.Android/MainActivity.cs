@@ -7,7 +7,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
-using XF.Auth.Demo.Authentication;
+
+using HockeyApp.Android;
 
 namespace XF.Auth.Demo.Droid {
     [Activity(Label = "XF.Auth.Demo", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -32,11 +33,16 @@ namespace XF.Auth.Demo.Droid {
             global::Xamarin.Auth.CustomTabsConfiguration.IsDefaultShareMenuItemUsed = false;
 
 
+
+            CrashManager.Register(this, "976a2e280cd84944b273e2e4f24ac13c");
+
             global::Android.Graphics.Color color_xamarin_blue;
             color_xamarin_blue = new global::Android.Graphics.Color(0x34, 0x98, 0xdb);
             global::Xamarin.Auth.CustomTabsConfiguration.ToolbarColor = color_xamarin_blue;
             LoadApplication(new App());
         }
+
+        
     }
 }
 
