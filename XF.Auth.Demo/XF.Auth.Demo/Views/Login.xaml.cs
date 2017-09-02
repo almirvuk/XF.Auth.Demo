@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using Xamarin.Auth;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using XF.Auth.Demo.Authentication; 
+using XF.Auth.Demo.Authentication;
+using XF.Auth.Demo.Helpers;
 
 namespace XF.Auth.Demo.Views {
 
@@ -26,7 +27,7 @@ namespace XF.Auth.Demo.Views {
 
         private void FacebookLogin(object sender, EventArgs e) {
 
-            string fb_app_id = "121718305150879";
+            string fb_app_id = SocialAppsInfo.Facebook_App_Id;
 
             authenticator
                      = new Xamarin.Auth.OAuth2Authenticator
