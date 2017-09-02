@@ -52,7 +52,7 @@ namespace XF.Auth.Demo.Views {
                                     }
                                 ).Invoke(),
                          //accessTokenUrl: new Uri("https://www.googleapis.com/oauth2/v4/token"),
-                         redirectUrl:
+                         redirectUrl: 
                              new Func<Uri>
                                 (
                                     () => {
