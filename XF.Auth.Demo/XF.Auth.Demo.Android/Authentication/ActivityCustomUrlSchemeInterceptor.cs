@@ -35,6 +35,7 @@ namespace XF.Auth.Demo.Droid.Authentication {
                         "com.xamarin.traditional.standard.samples.oauth.providers.android",
                         "com.googleusercontent.apps.1093596514437-d3rpjj7clslhdg3uv365qpodsl5tq4fn",
                         "fb121718305150879://localhost/path",
+                        "fb121718305150879",
                         /*
                         "urn:ietf:wg:oauth:2.0:oob",
                         "urn:ietf:wg:oauth:2.0:oob.auto",
@@ -46,8 +47,18 @@ namespace XF.Auth.Demo.Droid.Authentication {
                         "https://[::1]:PORT", 
                         */
                     },
-            DataHost = "localhost",
-            DataPath = "/oauth2redirect"
+            DataHosts = new[] {
+
+                        "localhost",
+                        "authorize",                // Facebook in fb1889013594699403://authorize 
+
+					},
+            DataPaths = new[] {
+
+                        "/",                        // Facebook
+						"/oauth2redirect",          // Google
+                        "/oauth2redirectpath",      // MeetUp
+					}
         )
     ]
     public class ActivityCustomUrlSchemeInterceptor : Activity

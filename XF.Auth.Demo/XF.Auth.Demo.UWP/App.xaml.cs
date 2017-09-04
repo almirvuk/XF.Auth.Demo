@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
@@ -13,7 +12,9 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+
 using Windows.UI.Xaml.Navigation;
+using XF.Auth.Demo.Authentication;
 
 namespace XF.Auth.Demo.UWP {
     /// <summary>
@@ -27,6 +28,23 @@ namespace XF.Auth.Demo.UWP {
         public App() {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+        }
+
+        protected override void OnActivated(Windows.ApplicationModel.Activation.IActivatedEventArgs args) {
+
+            if (args.Kind == Windows.ApplicationModel.Activation.ActivationKind.Protocol) {
+
+                var protocolArgs = args as Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs;
+                try {
+
+                    AuthenticationState.Authenticator.OnPageLoading(protocolArgs.Uri);
+                } catch (System.IO.FileLoadException exc_fl) {
+                    throw new Xamarin.Auth.AuthException("UWP custom scheme exception", exc_fl);
+
+                }
+            }
+
+            Windows.UI.Xaml.Window.Current.Activate();
         }
 
         /// <summary>
@@ -55,6 +73,7 @@ namespace XF.Auth.Demo.UWP {
 
                 Xamarin.Forms.Forms.Init(e);
                 global::Xamarin.Auth.Presenters.UWP.AuthenticationConfiguration.Init();
+
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated) {
                     //TODO: Load state from previously suspended application

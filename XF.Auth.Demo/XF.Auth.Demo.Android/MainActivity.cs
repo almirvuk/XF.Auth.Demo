@@ -31,7 +31,7 @@ namespace XF.Auth.Demo.Droid {
             global::Xamarin.Auth.CustomTabsConfiguration.IsActionButtonUsed = false;
             global::Xamarin.Auth.CustomTabsConfiguration.IsActionBarToolbarIconUsed = false;
             global::Xamarin.Auth.CustomTabsConfiguration.IsDefaultShareMenuItemUsed = false;
-
+            global::Xamarin.Auth.CustomTabsConfiguration.CustomTabsClosingMessage = null;
 
 
             CrashManager.Register(this, "976a2e280cd84944b273e2e4f24ac13c");
